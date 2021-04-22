@@ -11,6 +11,5 @@ def hello_world():
     Base.metadata.create_all(engine)
     return 'Hello World!'
 
-
 if __name__ == '__main__':
     app.run()
