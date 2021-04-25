@@ -1,17 +1,13 @@
-from flask import Flask
-from sqlalchemy import create_engine
-from models import Base
+from flask import Flask, render_template
+from login import login_bp
 
 app = Flask(__name__)
-DATABASE_URI = 'postgresql+psycopg2://postgres:progetto2021@localhost:5432/palestre'
-engine = create_engine(DATABASE_URI)  # 'sqlite:///C:\\Università\\Secondo Anno\\Basi di Dati\\Modulo
-# 2\\Progetto\\database.db'
+app.register_blueprint(login_bp)  # when a Flask Blueprint is registered, the application is extended with its contents
 
 
 @app.route('/')
 def hello_world():
-    Base.metadata.create_all(engine)
-    return 'Hello World!'
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
