@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block pagebody %}
+Insert your username:
+    <form action="/login" method="POST">
+        <input name="user" type="text">
+        <input type="submit">
+    </form>
+{% endblock %}

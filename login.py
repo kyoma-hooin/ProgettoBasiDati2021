@@ -1,12 +1,9 @@
-from flask import render_template
-from flask import Blueprint
+from flask import Blueprint, request, redirect, url_for
 
 login_bp = Blueprint('login_bp', __name__)
 
 
-@login_bp.route('/users/<username>')
-def show_profile(username):
-    users = ['bob', 'alice']
-    if username in users:
-        return render_template('profile.html', user=username)
-    return render_template('profile.html', reg=users)
+@login_bp.route('/login', methods=['GET', 'POST'])
+def login():
+    user = request.form["user"]
+    return redirect(url_for('profile_bp.show_profile', username=user))

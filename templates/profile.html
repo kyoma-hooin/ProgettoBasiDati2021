@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block pagebody %}
+    {% if user %}
+    Welcome to the Web App, {{ user }}!
+    {% else %}
+    Welcome to the Web App, anonymous! <br/>
+    {% endif %}
+{% endblock %}
