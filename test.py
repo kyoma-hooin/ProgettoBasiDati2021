@@ -1,3 +1,5 @@
+# Test file
+"""
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.orm import sessionmaker
@@ -40,3 +42,4 @@ def session_scope():
 with session_scope() as s:
     for r in s.query(User).all():  # SELECT *
         print(r)
+"""

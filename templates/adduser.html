@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>User Sign Up Form</title>
+</head>
+
+<body>
+    {% if user %}
+        <p>Successfully added a new user</p>
+        <p><a href="/adduser">Add another user</a></p>
+        <p><a href="/">Back to home</a></p>
+    {% else %}
+        <form action="/adduser" method="POST">
+            <div>
+                <label for="name_id">Name</label>
+                <input id="name_id" name="name" type="text" />
+            </div>
+            <div>
+                <label for="surname_id">Surname</label>
+                <input id="surname_id" name="surname" type="text" />
+            </div>
+            <div>
+                <label for="codicefiscale_id">Codice Fiscale</label>
+                <input id="codicefiscale_id" name="codicefiscale" type="text" />
+            </div>
+            <div>
+                <label for="email_id">Email</label>
+                <input id="email_id" name="email" type="email" />
+            </div>
+            <div>
+                <label for="password_id">Password</label>
+                <input id="password_id" name="password" type="password" />
+            </div>
+            <input type="submit" value="Add"/>
+        </form>
+    {% endif %}
+</body>
